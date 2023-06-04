@@ -1,0 +1,6 @@
+-- Your SQL goes here
+CREATE TABLE users (
+  id SERIAL NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  username TEXT NOT NULL UNIQUE,
+  password_hash TEXT NOT NULL
+)

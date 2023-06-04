@@ -1,0 +1,7 @@
+{
+	"port" : 3001,
+	"base_path" : "/tmp/store",
+	"db_user_name" : "testusername",
+	"db_password" : "testpassword",
+	"db_name" : "prevcloud"
+}
