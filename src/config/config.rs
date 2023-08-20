@@ -1,3 +1,4 @@
+#![allow(non_camel_case_types)]
 use serde::{Serialize, Deserialize};
 use std::cell::OnceCell;
 use std::io::Read;
@@ -8,7 +9,9 @@ pub struct Config{
 	pub base_path : String,
 	pub db_user_name : String,
 	pub db_password : String,
-	pub db_name: String
+	pub db_name: String,
+	pub pepper : String,
+	pub session_time_s : u32
 }
 const CONFIG:OnceCell<Config> = OnceCell::new();
 

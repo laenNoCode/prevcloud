@@ -3,9 +3,14 @@ use axum::{
     Router,
 };
 use std::net::SocketAddr;
+pub mod database;
+pub mod schema;
 mod auth;
 mod config;
 use auth::create_user::create_user;
+use auth::login::login;
+
+
 #[tokio::main]
 async fn main() {
     //get the config
@@ -18,8 +23,8 @@ async fn main() {
         // `GET /` goes to `root`
         .route("/", get(root))
         // `POST /users` goes to `create_user`
-        .route("/users", post(create_user));
-
+        .route("/users", post(create_user))
+        .route("/login", post(login));
     // run our app with hyper
     // `axum::Server` is a re-export of `hyper::Server`
     let addr = SocketAddr::from(([127, 0, 0, 1], conf.port));

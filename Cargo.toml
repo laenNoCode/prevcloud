@@ -4,10 +4,17 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
+argon2 = "0.5.0"
 axum = { version = "0.6.18", features = ["multipart", "tokio"] }
-diesel = { version = "2.1.0", features = ["postgres"] }
+base64 = "0.21.2"
+diesel = { version = "2.1.0", features = ["postgres", "time"] }
+dotenv = "0.15.0"
+dotenvy = "0.15.7"
+openssl = "0.10.56"
+password-hash = { version = "0.5.0", features = ["getrandom"] }
 serde = { version = "1.0.163", features = ["derive"] }
 serde_json = "1.0.96"
+time = "0.3.26"
 tokio = { version = "1.28.2", features = ["rt", "macros", "rt-multi-thread"] }
 tracing = "0.1.37"
 tracing-subscriber = "0.3.17"
